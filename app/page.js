@@ -1,26 +1,15 @@
 "use client";
 import Image from "next/image";
 import Buttons from "./components/buttons";
-import Navbar from "./molecules/navbar";
+import Navbar from "./molecules/navbar/navbar";
 import twitter from "/public/icons/twitterIcon.webp";
+
+import Test from "./molecules/navbar/test";
 
 export default function Home() {
 	return (
-		<main className="">
+		<main className="flex flex-col content-center min-h-screen">
 			<Navbar />
-			<div className="w-full font-druk"> does this work?</div>
-			<Buttons
-				children="Search"
-				icon={false}
-				ctaBtn={true}
-				className="btn-CTA"
-				onClick={() => console.log("open modal")}
-			/>
-			<Buttons
-				icon={true}
-				src={twitter}
-				onClick={() => print("Done icon+button")}
-			/>
 		</main>
 	);
 }

@@ -1,8 +1,6 @@
 import { motion, MotionConfig } from "framer-motion";
-import { useState } from "react";
-export default function AnimatedHamburger() {
-	const [active, setActive] = useState(false);
 
+export default function AnimatedHamburger({ active, toggle }) {
 	return (
 		<MotionConfig
 			transition={{
@@ -12,8 +10,8 @@ export default function AnimatedHamburger() {
 		>
 			<motion.button
 				initial={false}
-				onClick={() => setActive((pv) => !pv)}
-				className="relative h-10 w-20 transition-colors"
+				onClick={toggle}
+				className="relative h-10 w-10 transition-colors"
 				animate={active ? "open" : "closed"}
 			>
 				<motion.span
@@ -23,7 +21,7 @@ export default function AnimatedHamburger() {
 						x: "-50%",
 						y: "-50%",
 					}}
-					className="absolute h-1 w-10 bg-black"
+					className="absolute h-[2px] w-6 bg-black rounded-full"
 					variants={{
 						open: {
 							rotate: ["0deg", "0deg", "45deg"],
@@ -42,7 +40,7 @@ export default function AnimatedHamburger() {
 						x: "-50%",
 						y: "-50%",
 					}}
-					className="absolute h-1 w-10 bg-black"
+					className="absolute h-[2px] w-6 bg-black rounded-full"
 					variants={{
 						open: {
 							rotate: ["0deg", "0deg", "-45deg"],
@@ -56,14 +54,14 @@ export default function AnimatedHamburger() {
 					style={{
 						left: "calc(50% + 10px)",
 						bottom: "35%",
-						x: "-50%",
+						x: "-85%",
 						y: "50%",
 					}}
-					className="absolute h-1 w-5 bg-black"
+					className="absolute h-[2px] w-3 bg-black rounded-full"
 					variants={{
 						open: {
 							rotate: ["0deg", "0deg", "45deg"],
-							left: "50%",
+							left: "60%",
 							bottom: ["35%", "50%", "50%"],
 						},
 						closed: {

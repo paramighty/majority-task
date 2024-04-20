@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Buttons from "@/app/components/buttons";
+import Buttons from "@/app/atoms/buttons";
 
 import Image from "next/image";
 import majorityLogo from "/public/images/Majority.webp";

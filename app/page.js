@@ -1,15 +1,12 @@
 "use client";
-import Image from "next/image";
-import Buttons from "./components/buttons";
 import Navbar from "./molecules/navbar/navbar";
-import twitter from "/public/icons/twitterIcon.webp";
-
-import Test from "./molecules/navbar/test";
+import HeroComponent from "./components/heroComponent/heroComponent";
 
 export default function Home() {
 	return (
-		<main className="flex flex-col content-center min-h-screen">
+		<main className="flex flex-col justify-center content-center min-h-screen">
 			<Navbar />
+			<HeroComponent />
 		</main>
 	);
 }

@@ -10,7 +10,7 @@ export default function TextAnimation() {
 		["HONGKONG?"],
 		["SWEDEN?"],
 		["SAMOA?"],
-		["END OR WORLD?"],
+		["END OF WORLD?"],
 	];
 
 	const [index, setIndex] = useState(0);

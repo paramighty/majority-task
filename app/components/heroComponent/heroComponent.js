@@ -1,6 +1,8 @@
 import TextAnimation from "./textAnimation";
 import Buttons from "@/app/atoms/buttons";
 import globeIcon from "/public/icons/worldIcon.webp";
+import HeroModal from "./modal";
+import Link from "next/link";
 
 export default function HeroComponent() {
 	return (
@@ -18,13 +20,16 @@ export default function HeroComponent() {
 							Locals appreciate when you know about their country. Learn about
 							any country before visiting it. Be respectful.
 						</p>
-						<Buttons
-							icon={true}
-							ctaBtn={true}
-							src={globeIcon}
-							className="bg-[#BEF300] font-gta font-medium p-4 rounded-full m-8 flex flex-row gap-2"
-							children="search your travel destination"
-						/>
+
+						<Link href="?modal=true">
+							<Buttons
+								icon={true}
+								ctaBtn={true}
+								src={globeIcon}
+								className="bg-[#BEF300] font-gta font-medium p-4 rounded-full m-8 flex flex-row gap-2"
+								children="search your travel destination"
+							/>
+						</Link>
 					</div>
 				</div>
 			</div>

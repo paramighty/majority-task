@@ -1,6 +1,9 @@
 "use client";
-import Navbar from "./molecules/navbar/navbar";
+
+import Navbar from "./components/navbar/navbar";
 import HeroComponent from "./components/heroComponent/heroComponent";
+import { MyContext, MyContextProvider } from "./context/context";
+import { useContext } from "react";
 
 export default function Home() {
 	return (

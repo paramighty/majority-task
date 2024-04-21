@@ -1,5 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Modal from "./components/heroComponent/modal";
+import { MyContextProvider } from "./context/context";
+
+import { useContext } from "react";
 
 const drukFont = localFont({
 	src: "./fonts/Druk-Medium-Web.woff2",
@@ -36,9 +40,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={`${drukFont.variable} ${gtaFont.variable}`}>
-				{children}
-			</body>
+			<MyContextProvider>
+				<body className={`${drukFont.variable} ${gtaFont.variable}`}>
+					{children}
+					<Modal />
+				</body>
+			</MyContextProvider>
 		</html>
 	);
 }

@@ -16,7 +16,7 @@ export default function MobileNavbar() {
 		<>
 			<section
 				id="majorityMobileNav"
-				className="w-full bg-white fixed md:hidden flex flex-row items-center justify-between p-3"
+				className="w-full z-20 bg-white sticky md:hidden flex flex-row items-center justify-between p-3"
 			>
 				<div className="flex flex-row w-full justify-between items-center">
 					<div className="relative">

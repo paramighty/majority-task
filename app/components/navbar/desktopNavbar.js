@@ -22,7 +22,7 @@ export default function DesktopNavbar() {
 							/>
 						</Link>
 					</div>
-					<nav className="h-full pl-2.5 pr-2.5 py-2.5 bg-white flex flex-row items-center justify-between rounded-full">
+					<nav className="h-full pl-2.5 pr-2.5 py-2 bg-white flex flex-row items-center justify-between rounded-full">
 						<div className="flex flex-row items-center gap-x-10">
 							<ul className="flex gap-x-10">
 								{[

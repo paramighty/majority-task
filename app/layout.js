@@ -4,6 +4,8 @@ import Modal from "./components/heroComponent/modal";
 import { MyContextProvider } from "./context/context";
 
 import { useContext } from "react";
+import Footer from "./components/footer/footer";
+import Navbar from "./components/navbar/navbar";
 
 const drukFont = localFont({
 	src: "./fonts/Druk-Medium-Web.woff2",
@@ -41,9 +43,13 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<MyContextProvider>
-				<body className={`${drukFont.variable} ${gtaFont.variable}`}>
+				<body
+					className={`${drukFont.variable} ${gtaFont.variable} min-h-screen`}
+				>
 					{children}
+					<Navbar />
 					<Modal />
+					<Footer />
 				</body>
 			</MyContextProvider>
 		</html>

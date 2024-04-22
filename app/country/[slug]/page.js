@@ -3,6 +3,9 @@
 import CountryIntro from "./countryIntro";
 import { useContext, useEffect } from "react";
 import { MyContext } from "../../context/context";
+import CountryContinent from "./countryContinent";
+import Subscription from "./subscription";
+import Currency from "./currency";
 
 export default function Country({ params }) {
 	const { myState, setMyState } = useContext(MyContext);
@@ -33,9 +36,12 @@ export default function Country({ params }) {
 
 	return (
 		<div>
-			{myState?.selectedCountry?.name?.common}
+			{/* {myState?.selectedCountry?.name?.common} */}
 			{/* My Post: {params.slug} */}
 			<CountryIntro />
+			<CountryContinent />
+			<Currency />
+			<Subscription />
 		</div>
 	);
 }

@@ -10,7 +10,6 @@ import SearchBar from "./components/heroComponent/searchBar";
 export default function Home() {
 	return (
 		<main className="flex flex-col justify-center content-center">
-			<Navbar />
 			<HeroComponent />
 		</main>
 	);

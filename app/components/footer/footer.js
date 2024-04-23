@@ -1,4 +1,4 @@
-import majorityLogo from "/public/images/Majority_white.png";
+import majorityLogo from "/public/images/Majority_white.webp";
 import Image from "next/image";
 import facebookIcon from "/public/icons/facebookIcon.webp";
 import instagramIcon from "/public/icons/InstagramIcon.webp";

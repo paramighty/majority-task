@@ -51,7 +51,7 @@ function Modal() {
 
 						<div className="bg-white m-auto p-5 rounded-lg w-full">
 							<div className="flex flex-col">
-								<div className="flex flex-col px-2 gap-2">
+								<div className="flex flex-col px-2 gap-4">
 									<p className="small font-bold tracking-tight font-gta pl-3">
 										Destination Country
 									</p>
@@ -87,7 +87,7 @@ function Modal() {
 																});
 															}}
 														>
-															<li>
+															<li className="h-fit absolute">
 																{country.flag}
 																{country.name.common}
 															</li>
@@ -97,13 +97,13 @@ function Modal() {
 										)}
 									</div>
 								</div>
-								<div className="self-center pt-[1.1rem] pl-2">
+								<div className="self-center pt-[1.5rem] pl-2">
 									<Buttons
 										onClick={handleSubmit}
 										ctaBtn={true}
 										children="Look Up"
 										className="bg-black text-white rounded-md p-2
-										  end-2.5 bottom-2.5 focus:ring-blue-300   hover:bg-black-800 focus:ring-4  focus:outline-none  font-medium text-sm px-4 py-2"
+										  end-2.5 bottom-2.5 focus:ring-blue-300 hover:bg-black-800 focus:ring-4  focus:outline-none  font-medium text-sm px-4 py-2"
 									/>
 								</div>
 							</div>

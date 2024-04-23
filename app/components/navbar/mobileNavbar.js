@@ -4,10 +4,20 @@ import Buttons from "@/app/atoms/buttons";
 import Image from "next/image";
 import majorityLogo from "/public/images/Majority.webp";
 import AnimatedHamburger from "./animatedhamburger";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function MobileNavbar() {
 	const [active, setActive] = useState(false);
+
+	useEffect(() => {
+		if (active) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "";
+		}
+
+		return () => {};
+	}, [active]);
 
 	const toggle = () => {
 		setActive((pv) => !pv);
@@ -16,7 +26,7 @@ export default function MobileNavbar() {
 		<>
 			<section
 				id="majorityMobileNav"
-				className="w-full z-20 bg-white sticky md:hidden flex flex-row items-center justify-between p-3"
+				className="fixed top-0 w-full z-76 bg-white md:hidden flex flex-row items-center justify-between p-3"
 			>
 				<div className="flex flex-row w-full justify-between items-center">
 					<div className="relative">
@@ -32,14 +42,14 @@ export default function MobileNavbar() {
 					<AnimatedHamburger active={active} toggle={toggle} />
 				</div>
 			</section>
-			<section>
+			<section className="fixed top-0 w-[80%] z-75 bg-white md:hidden flex flex-row items-center overflow-y-hidden justify-between p-3">
 				{active === true && (
-					<div className="w-1/2 h-screen bg-white flex left-0 items-center justify-between p-3">
+					<div className="w-full h-screen bg-white flex left-0 items-center justify-between p-3 overflow-y-hidden">
 						<nav className="h-full flex justify-between pt-12 pb-32">
 							<div className="flex items-start pt-10">
 								<ul className="flex flex-col gap-y-10">
 									{[
-										["BANKING", "/dashboard"],
+										["BANKING", "/banking"],
 										["SERVICE", "/services"],
 										["HELP", "/help"],
 									].map(([title, url]) => (

@@ -9,10 +9,10 @@ export default function DesktopNavbar() {
 		<>
 			<section
 				id="majorityNav"
-				className="w-full hidden md:block md:fixed top-0"
+				className="w-full hidden md:block md:fixed	 top-0 h-fit"
 			>
 				<div className="flex justify-between items-center m-auto w-full max-w-[1440px] py-2 px-4 md:px-6 lg:px-14">
-					<div className="relative">
+					<div className="">
 						<Link href="/">
 							{" "}
 							<Image

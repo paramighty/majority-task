@@ -49,8 +49,13 @@ function Modal() {
 							SEARCH FOR YOUR DESTINATION
 						</h2>
 
-						<div className="bg-white m-auto p-5 rounded-lg w-full">
-							<div className="flex flex-col">
+						<div
+							key={{ error }}
+							initial={{ height: "fit" }}
+							animate={{ height: "auto" }}
+							className="bg-white m-auto p-5 rounded-lg w-full overflow-hidden"
+						>
+							<div className="flex flex-col relative">
 								<div className="flex flex-col px-2 gap-4">
 									<p className="small font-bold tracking-tight font-gta pl-3">
 										Destination Country
@@ -64,11 +69,7 @@ function Modal() {
 										required
 										className="small text-slate-800 rounded-lg border border-slate-400 focus:border-[#794DFF] w-full p-3"
 									/>
-									{error && (
-										<p className="text-red-500 small font-bold tracking-tight font-gta pl-3">
-											{error}
-										</p>
-									)}
+
 									<div className="text-black bg-transparent font-gta pl-3">
 										{info.slice(0, 1).map(
 											(country) =>
@@ -94,6 +95,11 @@ function Modal() {
 														</Link>
 													</ul>
 												)
+										)}
+										{error && (
+											<p className="text-red-500 small absolute font-bold tracking-tight font-gta pl-3">
+												{error}
+											</p>
 										)}
 									</div>
 								</div>

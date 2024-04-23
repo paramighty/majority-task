@@ -1,6 +1,8 @@
-"use client";
+"use client"; // Error components must be Client Components
 
 import { useEffect } from "react";
+
+import Buttons from "@/app/atoms/buttons";
 
 export default function Error({ error, reset }) {
 	useEffect(() => {
@@ -9,16 +11,19 @@ export default function Error({ error, reset }) {
 	}, [error]);
 
 	return (
-		<div>
-			<h2>Something went wrong!</h2>
-			<button
+		<div className="flex flex-col justify-center text-center">
+			<h1 className="p">
+				Ohho! There seems to be something wrong with our partner website! Try
+				again a few minutes later or search for a different country.
+			</h1>
+			<Buttons
 				onClick={
 					// Attempt to recover by trying to re-render the segment
 					() => reset()
 				}
 			>
-				Try again
-			</button>
+				Reload the page
+			</Buttons>
 		</div>
 	);
 }

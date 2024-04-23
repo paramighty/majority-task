@@ -26,7 +26,7 @@ export default function DesktopNavbar() {
 						<div className="flex flex-row items-center gap-x-10">
 							<ul className="flex gap-x-10">
 								{[
-									["Banking", "/dashboard"],
+									["Banking", "/banking"],
 									["Services", "/services"],
 									["Help", "/help"],
 								].map(([title, url]) => (

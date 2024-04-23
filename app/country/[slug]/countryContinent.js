@@ -20,14 +20,16 @@ export default function CountryContinent() {
 		return <></>;
 	}
 
-	const languageNames = Object.values(country.languages);
-	const regionNames = Object.values(country.region);
+	const languageNames = Object.values(country?.languages || {});
+	console.log(`${languageNames}`);
 
-	console.log(`${languageNames[0]}`);
+	if (country.subregion === "Africa") {
+		console.log("it is a great match");
+	}
 
 	return (
-		<div className="relative bg-[#DBCCFC] max-h-screen">
-			<div className="px-0 h-full m-auto w-screen max-w-[1680px]">
+		<div className="relative bg-[#DBCCFC] min-h-fit">
+			<div className="p-4 md:px-0 h-full m-auto w-screen max-w-[1680px]">
 				<div className="flex min-h-screen flex-col md:flex-row justify-center">
 					<div className="grid md:max-w-[50%] md:min-w-[50%] grid-cols-1 md:grid-cols-6 ">
 						<Image
@@ -36,21 +38,28 @@ export default function CountryContinent() {
 							alt="map of the continent"
 						/>
 					</div>
+
 					<div className="grid grid-cols-6 md:max-w-[50%] md:min-w-[50%]">
-						<h4 className="h4 leading-none font-druk gap-4 col-start-2 col-span-4 self-center">
-							{country?.name?.common}, a country in {country?.subregion}
+						<h4 className="h4 leading-none font-druk gap-4 col-start-2 col-span-4 text-center">
+							{country?.name?.common}, a country in{" "}
+							{country?.subregion || "mystry"}
 						</h4>
-						<p className="p font-gta col-start-2 col-span-4 self-center ">
-							A person from {country?.name?.common} is referred to as{" "}
-							{country?.demonyms?.eng?.f}. The country{" "}
+						<p className="p font-gta col-start-2 col-span-4 text-center">
+							If you meet someone from {country?.name?.common}, you can refer to
+							them as {country?.demonyms?.eng?.f}. The country{" "}
 							{country?.landlocked?.true ? "do not have" : "has"} its waterbody{" "}
 							{country?.landlocked?.true ? "unlike" : "like"} most other
 							countries. It shares border with{" "}
-							{country?.borders?.length > 0 ? length : "no"} neighbours. People
-							speak {languageNames[0]} here and so remember to learn a word or
-							two in {languageNames[0]}. And, important - they drive on the{" "}
-							{country?.car?.side} side of the road. If you are not comfortable,
-							better to hire a chauffer.
+							{country?.borders?.length
+								? `${country?.borders?.length} neighbours`
+								: "no neighbours"}
+							.
+							{languageNames.length
+								? ` People speak ${languageNames[0]} here and so remember to learn a
+								word or two in ${languageNames[0]}.`
+								: " There is no specific language that people speak here."}{" "}
+							And, important - they drive on the {country?.car?.side} side of
+							the road. If you are not comfortable, better to hire a chauffer.
 						</p>
 					</div>
 				</div>

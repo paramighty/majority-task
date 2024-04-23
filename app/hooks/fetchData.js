@@ -16,7 +16,7 @@ export function useFetchData() {
 					`https://restcountries.com/v3.1/name/${text}`
 				);
 				if (!response.ok) {
-					throw new Error("Is it a typo?");
+					throw new Error("Make sure the spelling is correct");
 				}
 
 				const data = await response.json();

@@ -10,7 +10,7 @@ import { MyContext } from "../../context/context";
 import { useFetchData } from "@/app/hooks/fetchData";
 
 function Modal() {
-	const { info, text, setText, loading, error } = useFetchData(); // FetchDataProvider();
+	const { info, text, setText, loading, error, setError } = useFetchData(); // FetchDataProvider();
 
 	const { myState, setMyState } = useContext(MyContext);
 
@@ -20,12 +20,21 @@ function Modal() {
 	const pathname = usePathname();
 
 	const handleSubmit = () => {
-		router.push(`/country/${encodeURIComponent(text)}`);
-		console.log(text);
+		const matchedCountry = info.find(
+			(country) => country.name.common.toLowerCase() === text.toLowerCase()
+		);
+		if (matchedCountry) {
+			router.push(`/country/${encodeURIComponent(matchedCountry.name.common)}`);
+			console.log(text);
+		} else {
+			setError("No matching country found. Try again"); // Setting an error state
+			console.log("No match found");
+		}
 	};
 
 	const handleChange = (event) => {
 		setText(event.target.value);
+		if (error) setError("");
 	};
 
 	return (
@@ -55,6 +64,11 @@ function Modal() {
 										required
 										className="small text-slate-800 rounded-lg border border-slate-400 focus:border-[#794DFF] w-full p-3"
 									/>
+									{error && (
+										<p className="text-red-500 small font-bold tracking-tight font-gta pl-3">
+											{error}
+										</p>
+									)}
 									<div className="text-black bg-transparent font-gta pl-3">
 										{info.slice(0, 1).map(
 											(country) =>

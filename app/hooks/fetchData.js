@@ -16,7 +16,7 @@ export function useFetchData() {
 					`https://restcountries.com/v3.1/name/${text}`
 				);
 				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
+					throw new Error("Is it a typo?");
 				}
 
 				const data = await response.json();
@@ -42,5 +42,5 @@ export function useFetchData() {
 		fetchData();
 	}, [text]);
 
-	return { text, setText, info, loading, error };
+	return { text, setText, info, loading, error, setError };
 }

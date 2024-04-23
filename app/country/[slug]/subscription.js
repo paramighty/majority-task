@@ -17,9 +17,9 @@ export default function Subscription() {
 	}
 
 	return (
-		<div className="relative bg-white max-h-screen">
-			<div className="px-0 h-full m-auto w-screen max-w-[1680px]">
-				<div className="flex min-h-screen flex-col-reverse md:flex-row justify-center items-center">
+		<div className="relative bg-white min-h-fit">
+			<div className="p-4 md:px-0 h-full m-auto w-screen max-w-[1680px]">
+				<div className="flex min-h-screen gap-4 flex-col-reverse md:flex-row justify-center items-center">
 					<div className="md:max-w-[50%] md:min-w-[50%] flex flex-col items-center gap-4">
 						<div className="flex flex-col justify-center content-center">
 							{" "}
@@ -34,23 +34,23 @@ export default function Subscription() {
 							<ul className="max-w-md font-gta space-y-1 text-black">
 								<li className="flex items-center">
 									<Image src={rightIcon} alt="icon of right sign" />
-									TIPS ON BEST WAY TO COMMUTE
+									Tips on best way to commute
 								</li>
 								<li className="flex items-center">
 									<Image src={rightIcon} alt="icon of right sign" />
-									RECHARGE PHONE ANYWHERE
+									Recharge phone anywhere
 								</li>
 								<li className="flex items-center">
 									<Image src={rightIcon} alt="icon of right sign" />
-									LEARN LOCAL GESTURES
+									Learn local gestures
 								</li>
 								<li className="flex items-center">
 									<Image src={rightIcon} alt="icon of right sign" />
-									CONTACT LOCAL AUTHORITY
+									Contact local authority
 								</li>
 								<li className="flex items-center">
 									<Image src={rightIcon} alt="icon of right sign" />
-									CANCEL ANYTIME
+									Cancel anytime
 								</li>
 							</ul>
 						</div>

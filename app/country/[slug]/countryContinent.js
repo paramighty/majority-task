@@ -30,7 +30,7 @@ export default function CountryContinent() {
 		? `${country.borders.length} neighbours`
 		: "no neighbours";
 	const languageText = languageNames.length
-		? `People speak ${languageNames[0]} here and so remember to learn a word or two in ${languageNames[0]}.`
+		? `People speak ${languageNames[0]} here and so remember to learn a word or two in ${languageNames[0]}`
 		: "There is no specific language that people speak here.";
 
 	if (country.subregion === "Africa") {
@@ -57,8 +57,7 @@ export default function CountryContinent() {
 							If you meet someone from {country?.name?.common}, you can refer to
 							them as {demonyms}. The country {hasWaterbody} its waterbody{" "}
 							{relativeToWater} most other countries. It shares border with
-							{borderingCountries}.{languageText}
-							And, important -{" "}
+							{borderingCountries}. {languageText}. And, important -{" "}
 							{country?.car
 								? `they drive on the ${country?.car.side} side of
 							the road.`

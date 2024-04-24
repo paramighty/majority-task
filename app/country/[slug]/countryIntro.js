@@ -38,6 +38,7 @@ export default function CountryIntro() {
 							height={500}
 							src={country?.flags?.png}
 							alt="The image of the flag of the country searched"
+							priority
 						/>
 						<p className="small text-center">
 							<em>The flag of {country?.name?.common} </em>

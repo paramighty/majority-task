@@ -6,9 +6,16 @@ import majorityApp from "/public/images/MajorityApp.webp";
 import rightIcon from "/public/icons/correctIcon.webp";
 import Image from "next/image";
 
+// Subscription: Displays subscription options related to services in a selected country.
 export default function Subscription() {
-	const { myState, setMyState } = useContext(MyContext);
-	const country = myState?.selectedCountry;
+	const { myState } = useContext(MyContext); // Access shared context for application-wide state.
+	const country = myState?.selectedCountry; // Retrieve the selected country's data from the context.
+
+	if (!country?.name?.common) {
+		return <></>; // Exits the component if no country is selected.
+	}
+
+	// Static list of benefits or features included with the subscription.
 	const items = [
 		"Tips on best way to commute",
 		"Recharge phone anywhere",
@@ -29,7 +36,7 @@ export default function Subscription() {
 				<div className="flex min-h-screen gap-4 flex-col-reverse md:flex-row justify-center items-center">
 					<div className="md:max-w-[50%] md:min-w-[50%] flex flex-col items-center gap-4">
 						<div className="flex flex-col justify-center content-center">
-							{" "}
+							{/* Displays subscription benefits in a list format */}{" "}
 							<h5 className="h5 leading-none font-druk  text-center md:text-left text-[#6748F8]">
 								LIFETIME SUBSCRIPTION
 							</h5>

@@ -3,17 +3,19 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/context";
 
+// Currency: Displays information about the currency used in a selected country.
 export default function Currency() {
-	const { myState, setMyState } = useContext(MyContext);
-	const country = myState?.selectedCountry;
+	const { myState } = useContext(MyContext); // Access shared context for application-wide state.
+	const country = myState?.selectedCountry; // Retrieve the selected country's data from the context.
 
-	console.log(country);
-
+	// Checks if country data is present. If not, exit the component early to avoid errors.
 	if (!country?.name?.common) {
 		return <></>;
 	}
 
+	// Retrieves currency information from the country object.
 	const currencyNames = Object.values(country?.currencies || {});
+	// Check if currency information exists to handle rendering accordingly.
 	const currencyObj = Object.keys(currencyNames).length;
 
 	return (
@@ -22,6 +24,7 @@ export default function Currency() {
 				<div className="flex min-h-screen flex-col justify-center items-center">
 					<h4 className="h4 font-druk text-white text-center">MONEY MATTERS</h4>
 
+					{/* Conditionally renders content based on the presence of currency data. */}
 					{currencyObj === 0 ? (
 						<p className="p font-gta text-white text-center">
 							We are not operating in this region yet.

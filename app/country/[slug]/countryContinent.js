@@ -7,14 +7,15 @@ import MapRendering from "./mapRendering";
 
 import Image from "next/image";
 
+// Defines a component to display information about a selected country within its continent context.
 export default function CountryContinent() {
-	const { myState, setMyState } = useContext(MyContext);
-	const country = myState?.selectedCountry;
-
+	const { myState, setMyState } = useContext(MyContext); // Accesses shared state from MyContext.
+	const country = myState?.selectedCountry; // Destructures selected country from state.
+	// Handles case where no country is selected (e.g., on initial load or if data is missing).
 	if (!country?.name?.common) {
 		return null;
 	}
-
+	// Retrieves and prepares various pieces of country data for display.
 	const languageNames = Object.values(country?.languages || {});
 	const regionDetails = country?.subregion || "mystry";
 	const demonyms = country?.demonyms?.eng?.f || "your friend";
@@ -44,6 +45,7 @@ export default function CountryContinent() {
 		<div className="relative bg-[#DBCCFC] min-h-fit flex justify-center content-center">
 			<div className="md:px-0 h-full m-0 md:m-auto w-screen max-w-[1680px]">
 				<div className="flex min-h-screen content-center flex-col md:flex-row justify-center py-2 md:p-4">
+					{/* Renders a map visualization of the country's location. */}
 					<MapRendering />
 
 					<div className="grid grid-cols-6 w-full">

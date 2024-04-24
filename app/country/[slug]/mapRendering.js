@@ -9,17 +9,20 @@ import mapEurope from "/public/images/maps/Map-of-Europe.webp";
 import mapAntarctica from "/public/images/maps/Map-of-Antarctica.webp";
 import mapSouthAmerica from "/public/images/maps/Map-of-South-America.webp"; // Correct this path if it's incorrect
 
+// MapRendering: Component that renders a map image based on the region of the selected country.
 export default function MapRendering() {
-	const { myState } = useContext(MyContext);
-	const country = myState?.selectedCountry;
+	const { myState } = useContext(MyContext); // Access shared context for application-wide state.
+	const country = myState?.selectedCountry; // Retrieve the selected country's data from the context.
 
 	if (!country?.name?.common) {
-		return null;
+		return null; // Exits the component if no country is selected.
 	}
-	const region = country?.region;
+
+	const region = country?.region; // Extracts the region from the country data.
 	console.log(`${region}`);
 
 	return (
+		// Conditionally renders map images based on the region
 		<div className="grid md:max-w-[50%] md:min-w-[50%] grid-cols-1 md:grid-cols-6">
 			{region === "Africa" ? (
 				<Image

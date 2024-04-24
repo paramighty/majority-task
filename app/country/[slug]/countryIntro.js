@@ -4,16 +4,17 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "../../context/context";
 import Image from "next/image";
 
-export default function Test() {
-	const { myState, setMyState } = useContext(MyContext);
-	const country = myState?.selectedCountry;
-
+//CountryIntro: Component displays basic information and a visual representation (flag) of a selected country.
+export default function CountryIntro() {
+	const { myState, setMyState } = useContext(MyContext); // Accesses shared context to retrieve state.
+	const country = myState?.selectedCountry; // Retrieves the selected country from state
 	console.log(country);
 
+	// Checks if country data is available. If not, render nothing.
 	if (!country?.name?.common) {
 		return <></>;
 	}
-
+	// Render a visual and textual introduction to the selected country.
 	return (
 		<div className="relative bg-[#f78da7] bg-opacity-20 min-h-fit">
 			<div className="p-4 md:p-0 h-full m-auto w-screen max-w-[1680px]">
@@ -36,7 +37,7 @@ export default function Test() {
 							width={500}
 							height={500}
 							src={country?.flags?.png}
-							alt={country?.flags?.alt}
+							alt="The image of the flag of the country searched"
 						/>
 						<p className="small text-center">
 							<em>The flag of {country?.name?.common} </em>

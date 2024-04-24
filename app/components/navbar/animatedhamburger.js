@@ -9,6 +9,7 @@ export default function AnimatedHamburger({ active, toggle }) {
 			}}
 		>
 			<motion.button
+				alt="hamburger menu icon. Onclick opens the menu for mobile"
 				initial={false}
 				onClick={toggle}
 				className="relative h-10 w-10 transition-colors"

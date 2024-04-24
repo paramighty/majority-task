@@ -1,3 +1,3 @@
 export default function Banking() {
-	return;
+	return <div className="h-screen"></div>;
 }

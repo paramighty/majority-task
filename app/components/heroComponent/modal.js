@@ -4,7 +4,7 @@ import { useSearchParams, usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import Link from "next/link";
-import Buttons from "@/app/atoms/buttons";
+import Buttons from "@/app/components/buttons/buttons";
 import crossIcon from "/public/icons/crossIcon.webp";
 import { MyContext } from "../../context/context";
 import { useFetchData } from "@/app/hooks/fetchData";

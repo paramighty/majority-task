@@ -7,12 +7,20 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className="bg-gray-900 sticky top-[100vh] -z-0">
+		// Footer component with a dark background
+		<footer className="bg-gray-900 sticky w-full top-[100vh] -z-0">
 			<div className="mx-auto w-full max-w-screen-xl">
 				<div className="flex flex-col md:flex-row p-4">
-					<div className="content-center min-w-[50%]">
-						<Image src={majorityLogo} height={300} width={300} />
+					{/* Logo section */}
+					<div className="content-center w-auto h-auto">
+						<Image
+							src={majorityLogo}
+							height={300}
+							width={300}
+							alt="white version of the company logo"
+						/>
 					</div>
+					{/* Navigation and information section */}
 					<div className="flex flex-row min-w-[50%] justify-around py-4">
 						<div>
 							<p className="p mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
@@ -36,6 +44,7 @@ export default function Footer() {
 								</li>
 							</ul>
 						</div>
+						{/* Company-related links */}
 						<div>
 							<p className="p mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
 								About
@@ -65,26 +74,30 @@ export default function Footer() {
 						</div>
 					</div>
 				</div>
+				{/* Social media links */}
 				<div className="px-4 py-6 md:flex md:items-center md:justify-between">
 					<div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-						<Link href="#">
+						<a href="https://www.facebook.com/MAJORITYOfficial/">
 							<Image
 								src={facebookIcon}
 								className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+								alt="icon for facebook"
 							/>
-						</Link>
-						<Link href="#">
+						</a>
+						<a href="https://www.instagram.com/majorityofficial">
 							<Image
 								src={instagramIcon}
 								className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+								alt="icon for instagram"
 							/>
-						</Link>
-						<Link href="#">
+						</a>
+						<a href="https://twitter.com/thisismajority">
 							<Image
 								src={twitterIcon}
 								className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+								alt="icon for twitter"
 							/>
-						</Link>
+						</a>
 					</div>
 				</div>
 			</div>

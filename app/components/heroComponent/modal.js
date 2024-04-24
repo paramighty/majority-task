@@ -10,15 +10,16 @@ import { MyContext } from "../../context/context";
 import { useFetchData } from "@/app/hooks/fetchData";
 
 function Modal() {
-	const { info, text, setText, loading, error, setError } = useFetchData(); // FetchDataProvider();
+	const { info, text, setText, loading, error, setError } = useFetchData(); // Hook for fetching data
 
-	const { myState, setMyState } = useContext(MyContext);
+	const { myState, setMyState } = useContext(MyContext); // Accessing React context
 
 	const searchParams = useSearchParams();
 	const router = useRouter();
-	const modal = searchParams.get("modal");
+	const modal = searchParams.get("modal"); // Checking for modal query parameter
 	const pathname = usePathname();
 
+	// Handle the submission of search: only search if typed text matches with api content
 	const handleSubmit = () => {
 		const matchedCountry = info.find(
 			(country) => country.name.common.toLowerCase() === text.toLowerCase()
@@ -27,21 +28,24 @@ function Modal() {
 			router.push(`/country/${encodeURIComponent(matchedCountry.name.common)}`);
 			console.log(text);
 		} else {
-			setError("No matching country found. Try again"); // Setting an error state
+			setError("No matching country found. Try again"); // // Set error on no match
 			console.log("No match found");
 		}
 	};
 
+	// Updates text state on every single input change
 	const handleChange = (event) => {
 		setText(event.target.value);
-		if (error) setError("");
+		if (error) setError(""); // Clears error when user starts typing again
 	};
 
 	return (
 		<>
 			{modal && (
+				// Modal section to search for a destination
 				<section className="fixed left-0 top-0 w-screen h-screen bg-[#DBCCFC] z-50 overflow-auto backdrop-blur flex flex-col justify-center items-center px-2">
 					<div className="flex flex-col">
+						{/* Button to close modal */}
 						<Link href={pathname} className="self-end">
 							<Buttons icon={true} src={crossIcon} />
 						</Link>
@@ -69,7 +73,7 @@ function Modal() {
 										required
 										className="small text-slate-800 rounded-lg border border-slate-400 focus:border-[#794DFF] w-full p-3"
 									/>
-
+									{/* List of countries from api shows when typed on input. Only 1 suggestion appears */}
 									<div className="text-black bg-transparent font-gta pl-3">
 										{info.slice(0, 1).map(
 											(country) =>
@@ -79,6 +83,7 @@ function Modal() {
 														key={country.name.common}
 													>
 														<Link
+															prefetch
 															key={country.name.common}
 															href={country}
 															onClick={() => {
@@ -96,6 +101,8 @@ function Modal() {
 													</ul>
 												)
 										)}
+
+										{/* Error message display */}
 										{error && (
 											<p className="text-red-500 small absolute font-bold tracking-tight font-gta pl-3">
 												{error}
@@ -103,6 +110,7 @@ function Modal() {
 										)}
 									</div>
 								</div>
+								{/* Button to initiate search */}
 								<div className="self-center pt-[1.5rem] pl-2">
 									<Buttons
 										onClick={handleSubmit}

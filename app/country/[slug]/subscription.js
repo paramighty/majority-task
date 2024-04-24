@@ -9,6 +9,13 @@ import Image from "next/image";
 export default function Subscription() {
 	const { myState, setMyState } = useContext(MyContext);
 	const country = myState?.selectedCountry;
+	const items = [
+		"Tips on best way to commute",
+		"Recharge phone anywhere",
+		"Learn local gestures",
+		"Contact local authority",
+		"Cancel anytime",
+	];
 
 	console.log(country);
 
@@ -32,26 +39,12 @@ export default function Subscription() {
 						</div>
 						<div className="place-content-center">
 							<ul className="max-w-md font-gta space-y-1 text-black">
-								<li className="flex items-center">
-									<Image src={rightIcon} alt="icon of right sign" />
-									Tips on best way to commute
-								</li>
-								<li className="flex items-center">
-									<Image src={rightIcon} alt="icon of right sign" />
-									Recharge phone anywhere
-								</li>
-								<li className="flex items-center">
-									<Image src={rightIcon} alt="icon of right sign" />
-									Learn local gestures
-								</li>
-								<li className="flex items-center">
-									<Image src={rightIcon} alt="icon of right sign" />
-									Contact local authority
-								</li>
-								<li className="flex items-center">
-									<Image src={rightIcon} alt="icon of right sign" />
-									Cancel anytime
-								</li>
+								{items.map((item) => (
+									<li key={item} className="flex items-center">
+										<Image src={rightIcon} alt="icon of right sign" />
+										{item}
+									</li>
+								))}
 							</ul>
 						</div>
 					</div>

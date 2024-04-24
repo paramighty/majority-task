@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Buttons from "./atoms/buttons";
+import Buttons from "./components/buttons/buttons";
 
 export default function NotFound() {
 	return (

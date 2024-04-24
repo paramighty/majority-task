@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import Buttons from "@/app/atoms/buttons";
+import Buttons from "@/app/components/buttons/buttons";
 
 export default function Error({ error, reset }) {
 	useEffect(() => {

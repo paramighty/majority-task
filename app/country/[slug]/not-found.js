@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Buttons from "@/app/components/buttons/buttons";
 
 export default function NotFound() {
 	return (
-		<div className="flex h-1/2 max-h-screen">
-			<h2>Not Found</h2>
+		<div className="flex h-fit max-h-screen flex-col justify-center content-center items-center">
+			<h2 className="h2 self-center">Not Found</h2>
 			<p>Could not find requested resource</p>
-			<Link href="/">Return Home</Link>
+			<Link href="/">
+				<Buttons>Return Home</Buttons>
+			</Link>
 		</div>
 	);
 }

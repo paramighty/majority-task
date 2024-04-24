@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<MyContextProvider>
 				<body
-					className={`${drukFont.variable} ${gtaFont.variable} min-h-screen`}
+					className={`${drukFont.variable} ${gtaFont.variable} scroll-auto min-w-[326px] min-h-screen overflow-scroll pt-[64px]`}
 				>
 					{children}
 					<Navbar />

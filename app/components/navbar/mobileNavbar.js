@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Buttons from "@/app/atoms/buttons";
+import Buttons from "@/app/components/buttons/buttons";
 
 import Image from "next/image";
 import majorityLogo from "/public/images/Majority.webp";
@@ -26,7 +26,7 @@ export default function MobileNavbar() {
 		<>
 			<section
 				id="majorityMobileNav"
-				className="fixed top-0 w-full z-76 bg-white md:hidden flex flex-row items-center justify-between p-3"
+				className="fixed top-0 w-full z-100 bg-white md:hidden flex flex-row items-center justify-between p-3"
 			>
 				<div className="flex flex-row w-full justify-between items-center">
 					<div className="relative">
@@ -42,10 +42,10 @@ export default function MobileNavbar() {
 					<AnimatedHamburger active={active} toggle={toggle} />
 				</div>
 			</section>
-			<section className="fixed top-0 w-[80%] z-75 bg-white md:hidden flex flex-row items-center overflow-y-hidden justify-between p-3">
+			<section className="fixed top-0 min-w-[80%] z-75 bg-white md:hidden flex flex-row items-center overflow-hidden justify-between p-3">
 				{active === true && (
-					<div className="w-full h-screen bg-white flex left-0 items-center justify-between p-3 overflow-y-hidden">
-						<nav className="h-full flex justify-between pt-12 pb-32">
+					<div className="w-full sticky h-full flex left-0 items-center justify-between p-3 overflow-y-hidden">
+						<nav className="h-screen w-fit flex justify-between pt-12 pb-32">
 							<div className="flex items-start pt-10">
 								<ul className="flex flex-col gap-y-10">
 									{[

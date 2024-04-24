@@ -1,35 +1,36 @@
 import TextAnimation from "./textAnimation";
-import Buttons from "@/app/atoms/buttons";
+import Buttons from "@/app/components/buttons/buttons";
 import globeIcon from "/public/icons/worldIcon.webp";
 import HeroModal from "./modal";
 import Link from "next/link";
 
 export default function HeroComponent() {
 	return (
-		<div className="h-screen relative bg-[#794DFF] max-h-[1060px]">
-			<div className="px-0 h-full m-auto w-screen max-w-[1680px] ">
-				<div className="h-full">
-					<div className="flex flex-col items-center justify-center h-full w-full px-8 pb-12 pt-8 2xl:px-16">
-						<h1 className="h1 font-druk hero-title leading-none uppercase text-center text-[#E7F3E7]">
+		<div className="h-screen bg-[#794DFF] max-h-[1060px] w-full sticky">
+			<div className="px-0 pt-8 h-screen m-auto w-screen max-w-[1680px] min-w-[256px]">
+				<div className="h-full w-full">
+					<div className="flex flex-col content-center items-center justify-center h-full min-w-[293px] w-full px-8  2xl:px-16">
+						<h1 className="h1 font-druk leading-none uppercase text-center text-[#E7F3E7]">
 							TRAVELLING TO
 						</h1>
-						<div className="flex flex-col-reverse relative h-[80px] 2xl:h-[120px] w-full justify-center overflow-hidden">
+						<div className="flex -z-20 flex-col-reverse relative h-[80px] min-w-[318px] 2xl:h-[120px] w-full justify-center">
 							<TextAnimation />
 						</div>
-						<p className="p text-white font-light mt-4 text-center max-w-[720px] leading-7">
+						<p className="p text-white font-light text-center min-w-fit max-w-[720px] pt-4 leading-7">
 							Locals appreciate when you know about their country. Learn about
 							any country before visiting it. Be respectful.
 						</p>
-
-						<Link href="?modal=true">
-							<Buttons
-								icon={true}
-								ctaBtn={true}
-								src={globeIcon}
-								className="bg-[#BEF300] font-gta font-medium p-4 rounded-full m-8 flex flex-row gap-2"
-								children="search your travel destination"
-							/>
-						</Link>
+						<div className="w-90 shrink-0 whitespace-nowrap">
+							<Link href="?modal=true">
+								<Buttons
+									icon={true}
+									ctaBtn={true}
+									src={globeIcon}
+									className="bg-[#BEF300] font-gta p font-medium p-4 rounded-full m-8 flex flex-row items-center shrink-0 gap-2 min-w-[240px]"
+									children="search your destination"
+								/>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

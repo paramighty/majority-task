@@ -2,14 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import majorityLogo from "/public/images/Majority.webp";
 
-import Buttons from "../../atoms/buttons";
+import Buttons from "../buttons/buttons";
 
 export default function DesktopNavbar() {
 	return (
 		<>
 			<section
 				id="majorityNav"
-				className="w-full hidden md:block md:fixed	 top-0 h-fit"
+				className="w-full hidden md:block md:fixed top-0 h-fit"
 			>
 				<div className="flex justify-between items-center m-auto w-full max-w-[1440px] py-2 px-4 md:px-6 lg:px-14">
 					<div className="">
@@ -22,7 +22,7 @@ export default function DesktopNavbar() {
 							/>
 						</Link>
 					</div>
-					<nav className="h-full pl-2.5 pr-2.5 py-2 bg-white flex flex-row items-center justify-between rounded-full">
+					<nav className="h-fit w-max pl-2.5 pr-2.5 py-2 bg-white flex flex-row items-center justify-between rounded-full">
 						<div className="flex flex-row items-center gap-x-10">
 							<ul className="flex gap-x-10">
 								{[
@@ -42,7 +42,7 @@ export default function DesktopNavbar() {
 							<Buttons
 								ctaBtn={true}
 								children="Sign up"
-								className="btn-primary"
+								className="btn-primary h-[40px] whitespace-nowrap"
 							/>
 						</div>
 					</nav>

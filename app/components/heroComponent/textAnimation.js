@@ -23,15 +23,15 @@ export default function TextAnimation() {
 	}, []);
 
 	return (
-		<div className="flex justify-center content-center">
+		<div className="flex justify-center content-center m-0 whitespace-nowrap">
 			<AnimatePresence mode="wait">
 				<motion.h1
 					key={words[index]}
-					initial={{ opacity: 1, y: 50 }}
+					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{
 						duration: 0.4,
-						ease: "easeInOut",
+						ease: "linear",
 						delay: 0.01,
 					}}
 					exit={{

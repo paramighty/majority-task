@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/context";
 import Image from "next/image";
-import mapAfrica from "/public/images/Map-of-Continent-Africa.webp";
-import mapNorthAmerica from "/public/images/Map-of-North-America.webp";
-import mapAsia from "/public/images/Map-of-Asia.webp";
-import mapOceania from "/public/images/Map-of-Australia.webp";
-import mapEurope from "/public/images/Map-of-Europe.webp";
-import mapAntarctica from "/public/images/Map-of-Antarctica.webp";
-import mapSouthAmerica from "/public/images/Map-of-South-America.webp"; // Correct this path if it's incorrect
+import mapAfrica from "/public/images/maps/Map-of-Continent-Africa.webp";
+import mapNorthAmerica from "/public/images/maps/Map-of-North-America.webp";
+import mapAsia from "/public/images/maps/Map-of-Asia.webp";
+import mapOceania from "/public/images/maps/Map-of-Australia.webp";
+import mapEurope from "/public/images/maps/Map-of-Europe.webp";
+import mapAntarctica from "/public/images/maps/Map-of-Antarctica.webp";
+import mapSouthAmerica from "/public/images/maps/Map-of-South-America.webp"; // Correct this path if it's incorrect
 
 export default function MapRendering() {
 	const { myState } = useContext(MyContext);
@@ -57,7 +57,7 @@ export default function MapRendering() {
 					src={mapOceania}
 					alt="map of the continent"
 				/>
-			) : region === "Antarctica" ? (
+			) : region === "Antarctic" ? (
 				<Image
 					className="md:col-start-2 md:col-span-4 self-center justify-self-center rounded-lg shadow-2xl"
 					src={mapAntarctica}

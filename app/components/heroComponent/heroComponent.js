@@ -33,7 +33,7 @@ export default function HeroComponent() {
 									icon={true}
 									ctaBtn={true}
 									src={globeIcon}
-									className="bg-[#BEF300] font-gta p font-medium p-4 rounded-full m-8 flex flex-row items-center shrink-0 gap-2 min-w-[240px]"
+									className="bg-[#BEF300] font-gta sm font-thin p-4 rounded-full m-8 flex flex-row items-center shrink-0 gap-2 min-w-[240px]"
 									children="search your destination"
 								/>
 							</Link>
